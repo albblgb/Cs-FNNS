@@ -70,9 +70,9 @@ LpipsNet = PerceptualSimilarity.models.PerceptualLoss(model='net-lin', net='alex
 SiaStegNet = KeNet().to(device)
 SiaStegNet.load_state_dict(torch.load(c.pre_trained_siastegnet_path, map_location='cuda')['state_dict'], strict=False)
 SiaStegNet.eval()
-SRNet = Srnet().to(device)
-SRNet.load_state_dict(torch.load(c.pre_trained_srnet_path)["model_state_dict"])
-SRNet.eval()
+# SRNet = Srnet().to(device)
+# SRNet.load_state_dict(torch.load(c.pre_trained_srnet_path)["model_state_dict"])
+# SRNet.eval()
 Yenet = YeNet().to(device)
 Yenet.load_state_dict(torch.load(c.pre_trained_yenet_path)["model_state_dict"])
 Yenet.eval()
@@ -148,9 +148,9 @@ for i in range(len(secret_image_path_list)):
 
         if c.use_grad_signals_in_steganalysis_nets and (iteration_index + 1) > 1400:
             # # SRNet
-            inputs = (cover_backup + adv_pert); labels = torch.tensor([0]).to(device)
-            outputs = SRNet(inputs)
-            loss +=  c.beta * c.gamma * l_anti_dec(outputs, labels) 
+            # inputs = (cover_backup + adv_pert); labels = torch.tensor([0]).to(device)
+            # outputs = SRNet(inputs)
+            # loss +=  c.beta * c.gamma * l_anti_dec(outputs, labels) 
             # # siastegnet
             inputs, labels = preprocess_data((cover_backup + adv_pert)*255, torch.tensor([0]).to(device), False)
             outputs, feats_0, feats_1 = SiaStegNet(*inputs)
@@ -192,13 +192,13 @@ for i in range(len(secret_image_path_list)):
     logger.info('SiaStegNet_dec_acc: {}'.format(SiaStegNet_dec_acc))
 
     # srnet
-    inputs = cover; labels = torch.tensor([0.]).to(device)
-    outputs = SRNet(inputs)
-    SRNet_dec_acc[0] += accuracy(outputs, labels).item()
-    inputs = adv_image; labels = torch.tensor([1.]).to(device)
-    outputs = SRNet(inputs)
-    SRNet_dec_acc[1] += accuracy(outputs, labels).item()
-    logger.info('SRNet_dec_acc: {}'.format(SRNet_dec_acc))
+    # inputs = cover; labels = torch.tensor([0.]).to(device)
+    # outputs = SRNet(inputs)
+    # SRNet_dec_acc[0] += accuracy(outputs, labels).item()
+    # inputs = adv_image; labels = torch.tensor([1.]).to(device)
+    # outputs = SRNet(inputs)
+    # SRNet_dec_acc[1] += accuracy(outputs, labels).item()
+    # logger.info('SRNet_dec_acc: {}'.format(SRNet_dec_acc))
 
     # yenet
     inputs = cover; labels = torch.tensor([0.]).to(device)
@@ -285,7 +285,7 @@ for i in range(len(secret_image_path_list)):
 logger.info('stego_psnr_mean: {:.2f}, stego_ssim_mean: {:.4f}, stego_lpips_mean: {:.4f}, stego_apd_mean: {:.2f}'.format(np.array(stego_psnr_list).mean(), np.array(stego_ssim_list).mean(), np.array(stego_lpips_list).mean(), np.array(stego_apd_list).mean()))
 logger.info('secret_rev_psnr_mean: {:.2f}, secret_rev_ssim_mean: {:.4f}, secret_rev_lpips_mean: {:.4f}, secret_rev_apd_mean: {:.2f}'.format(np.array(secret_rev_psnr_list).mean(), np.array(secret_rev_ssim_list).mean(), np.array(secret_rev_lpips_list).mean(), np.array(secret_rev_apd_list).mean()))
 logger.info('YeNet_cover_det_acc: {:.2f}, YeNet_stego_det_acc: {:.2f}, YeNet_total_det_acc: {:.2f}'.format(YeNet_dec_acc[0]/num_of_imgs ,YeNet_dec_acc[1]/num_of_imgs, (YeNet_dec_acc[0]+YeNet_dec_acc[1])/2/num_of_imgs))
-logger.info('SRNet_cover_det_acc: {:.2f}, SRNet_stego_det_acc: {:.2f}, SRNet_total_det_acc: {:.2f}'.format(SRNet_dec_acc[0]/num_of_imgs ,SRNet_dec_acc[1]/num_of_imgs, (SRNet_dec_acc[0]+SRNet_dec_acc[1])/2/num_of_imgs))
+# logger.info('SRNet_cover_det_acc: {:.2f}, SRNet_stego_det_acc: {:.2f}, SRNet_total_det_acc: {:.2f}'.format(SRNet_dec_acc[0]/num_of_imgs ,SRNet_dec_acc[1]/num_of_imgs, (SRNet_dec_acc[0]+SRNet_dec_acc[1])/2/num_of_imgs))
 logger.info('SiaStegNet_cover_det_acc: {:.2f}, SiaStegNet_stego_det_acc: {:.2f}, SiaStegNet_total_det_acc: {:.2f}'.format(SiaStegNet_dec_acc[0]/num_of_imgs ,SiaStegNet_dec_acc[1]/num_of_imgs, (SiaStegNet_dec_acc[0]+SiaStegNet_dec_acc[1])/2/num_of_imgs))
 
 
