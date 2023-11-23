@@ -225,12 +225,12 @@ for i in range(len(secret_image_path_list)):
     adv_image = torch.round(torch.clamp((cover + delta)*255, min=0., max=255.))/255
 
     # testing 
-    secret_rev = model(adv_image)
-    secret_resi_draw = (secret - secret_rev)
-    secret_resi_draw = secret_resi_draw.flatten().detach().squeeze().cpu().numpy()*255
-    hist_save_dir = os.path.join(image_save_dirs, 'resi/')
-    mkdirs(hist_save_dir)
-    img_hist(secret_resi_draw, os.path.join(hist_save_dir +  str(i) + '_BP.png'), tilte='Luo')
+    # secret_rev = model(adv_image)
+    # secret_resi_draw = (secret - secret_rev)
+    # secret_resi_draw = secret_resi_draw.flatten().detach().squeeze().cpu().numpy()*255
+    # hist_save_dir = os.path.join(image_save_dirs, 'resi/')
+    # mkdirs(hist_save_dir)
+    # img_hist(secret_resi_draw, os.path.join(hist_save_dir +  str(i) + '_BP.png'), tilte='Luo')
     # denosing the recovered secret images
     secret_rev = denoise_model(secret_rev)
     secret_rev = torch.round(torch.clamp(secret_rev*255, min=0., max=255.))/255
