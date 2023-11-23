@@ -28,5 +28,5 @@ The official code for 'Cover-separable Fixed Neural Network Steganography via De
 - Results will be saved in the "./result" folder.
     
 ## Others
-- Pretrained SRNet model is large, so we upload it to [Google Drive](https://drive.google.com/drive/folders/1lM9ED7uzWYeznXSWKg4mgf7Xc7wjjm8Q?usp=sharing). Download it and place it in the specified location (refer to line 20 in the config.py file). After that, you can uncomment the part related to SRNet, bringing its gradient signals into the SPS optimization.
+- Pretrained SRNet model is large, so we upload it to [Google Drive](https://drive.google.com/drive/folders/1nZuBFTH0-bb9umTOO54Axap453N2mfa6?usp=sharing). Download it and place it in the specified location (refer to line 20 in the config.py file). After that, you can uncomment the part related to SRNet, bringing its gradient signals into the SPS optimization.
 
