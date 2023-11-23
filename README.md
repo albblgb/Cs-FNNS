@@ -16,10 +16,13 @@ The official code for 'Cover-separable Fixed Neural Network Steganography via De
    Run `python Cs-FNNS_AntiDetect.py` 
 
 - Regarding resistance against JPEG compression,
+
    Change the code in `config.py`:  `line14:  secret_image_size = '128'`
+  
    Run `python Cs-FNNS-JPEG.py`
 
 - Regarding hiding multiple secret images for different receiver,
+  
   Run `python Cs-FNNS_MUsers.py`
 
 - Results will be saved in the "./result" folder.
