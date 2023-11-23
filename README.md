@@ -28,5 +28,5 @@ The official code for 'Cover-separable Fixed Neural Network Steganography via De
 - Results will be saved in the "./result" folder.
     
 ## Others
-- The `batch_size` in `config.py` should be at least `2*number of gpus` and it should be divisible by number of gpus.
+- Pretrained SRNet model is large, so we upload it to [Google Drive](https://drive.google.com/drive/folders/1lM9ED7uzWYeznXSWKg4mgf7Xc7wjjm8Q?usp=sharing). Download it and place it in the specified location (refer to line 20 in the config.py file). After that, you can uncomment the part related to SRNet, bringing its gradient signals into the SPS optimization.
 
