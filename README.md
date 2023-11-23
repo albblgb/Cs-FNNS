@@ -9,6 +9,8 @@ The official code for 'Cover-separable Fixed Neural Network Steganography via De
 
    `conda activate FNNS`
 
+  `pip install natsort`
+
 
 ## Get Started
 - Regarding resistance against detection,
