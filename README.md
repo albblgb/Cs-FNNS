@@ -1,5 +1,5 @@
 # Cs-FNNS
-The official code for 
+This repo is the official code for
 
 * [**Cover-separable Fixed Neural Network Steganography via Deep Generative Models**](https://arxiv.org/abs/2407.11405)
 
