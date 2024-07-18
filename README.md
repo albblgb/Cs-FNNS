@@ -1,5 +1,7 @@
 # Cs-FNNS
-The official code for 'Cover-separable Fixed Neural Network Steganography via Deep Generative Models'
+The official code for 
+
+* [**Cover-separable Fixed Neural Network Steganography via Deep Generative Models**](https://arxiv.org/abs/2407.11405)
 
 ## Dependencies and Installation
 - Python 3.8.13, PyTorch = 1.11.0
