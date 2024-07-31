@@ -34,3 +34,13 @@ This repo is the official code for
 ## Others
 - Pretrained SRNet model is large, so we upload it to [Google Drive](https://drive.google.com/drive/folders/1nZuBFTH0-bb9umTOO54Axap453N2mfa6?usp=sharing). Download it and place it in the specified location (refer to line 20 in the config.py file). After that, you can uncomment the part related to SRNet, bringing its gradient signals into the SPS optimization.
 
+## Citation
+If you find our paper or code useful for your research, please cite:
+```
+@article{li2024cover,
+  title={Cover-separable Fixed Neural Network Steganography via Deep Generative Models},
+  author={Li, Guobiao and Li, Sheng and Qian, Zhenxing and Zhang, Xinpeng},
+  journal={arXiv preprint arXiv:2407.11405},
+  year={2024}
+}
+```
