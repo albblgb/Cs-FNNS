@@ -37,10 +37,12 @@ This repo is the official code for
 ## Citation
 If you find our paper or code useful for your research, please cite:
 ```
-@article{li2024cover,
+@inproceedings{li2024cover,
   title={Cover-separable Fixed Neural Network Steganography via Deep Generative Models},
   author={Li, Guobiao and Li, Sheng and Qian, Zhenxing and Zhang, Xinpeng},
-  journal={arXiv preprint arXiv:2407.11405},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+  pages={10238--10247},
   year={2024}
 }
+
 ```
